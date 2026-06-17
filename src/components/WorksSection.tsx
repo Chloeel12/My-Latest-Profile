@@ -107,6 +107,7 @@ const PhotoCard = ({ photo, idx, openPhotoLightbox }: PhotoCardProps) => {
           src={photo.imageUrl} 
           alt={photo.chineseTitle || photo.title || "Photo Item"} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+          style={photo.imgStyle}
         />
         {/* Bottom Info Stripe banner */}
         <div className="absolute bottom-0 left-0 right-0 p-2 bg-black border-t-2 border-black flex flex-col justify-end text-white z-20">
@@ -737,8 +738,8 @@ export function WorksSection({ onBackToHome }: WorksSectionProps) {
               </p>
             </div>
              <h2 
-              style={{ paddingTop: '7px', marginTop: '22px', fontSize: '76px' }}
-              className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-none text-[#231f20]"
+              style={{ paddingTop: '7px' }}
+              className="font-heading font-black text-2xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[76px] uppercase tracking-tighter leading-none text-[#231f20] mt-3 sm:mt-6 break-words whitespace-normal"
             >
               PHOTOGRAPHY
             </h2>
@@ -788,12 +789,34 @@ export function WorksSection({ onBackToHome }: WorksSectionProps) {
                 💡 STAGGERED PARALLAX STACKS // 左右拖拽或滚轮滑动浏览作品集
               </p>
             </div>
-            <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-none text-[#231f20]">
+            <h2 className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-none text-[#231f20] break-words whitespace-normal">
               GRAPHIC WORK
             </h2>
           </div>
 
-          {/* Alternating Staggered Timeline Canvas with dynamic mid-lane node axis */}
+          {/* Mobile View: Flat vertical list layout for screen < 768px */}
+          <div className="md:hidden flex flex-col gap-6 overflow-y-auto w-full max-h-[58vh] mt-4 pr-1.5 select-text border-2 border-black p-3 bg-[#fff9fa] shadow-brutal-sm rounded-none">
+            {POST_DESIGN_WORKS.map((work) => {
+              const naturalAr = designAspectRatios[work.id] || 0.8;
+              const ar = naturalAr < 0.95 ? 1.0 : naturalAr;
+              return (
+                <div key={work.id} className="w-full max-w-full">
+                  <IsometricTiltCard
+                    title={work.title}
+                    tag={work.tag}
+                    index={work.index}
+                    graphicUrl={work.graphicUrl}
+                    layers={work.layers}
+                    theme={work.theme}
+                    aspectRatio={ar}
+                    onClick={() => setSelectedDesign(work)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Desktop View: Alternating Staggered Timeline Canvas with dynamic mid-lane node axis */}
           <div 
             style={{ marginLeft: '0px', marginTop: '13px', height: '463px' }}
             onMouseEnter={(e) => { activeHoveredStreamRef.current = e.currentTarget; }}
@@ -801,7 +824,7 @@ export function WorksSection({ onBackToHome }: WorksSectionProps) {
               activeHoveredStreamRef.current = null; 
               isEdgeReleasingRef.current = false;
             }}
-            className="overflow-x-auto no-scrollbar w-full max-w-full lg:max-w-[1200px] xl:max-w-[1300px] detailed-work-stream overscroll-x-contain"
+            className="hidden md:block overflow-x-auto no-scrollbar w-full max-w-full lg:max-w-[1200px] xl:max-w-[1300px] detailed-work-stream overscroll-x-contain"
           >
             <div className="relative flex flex-row gap-3 sm:gap-6 items-center h-full min-w-max pr-24 py-5 sm:py-6">
               {/* Horizontal Timeline central axis wire */}
@@ -899,7 +922,7 @@ export function WorksSection({ onBackToHome }: WorksSectionProps) {
                 💡 SCROLL SHEET LIST VERTICALLY // 列表数据可上下滚动滚动浏览
               </p>
             </div>
-            <h2 className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-none text-[#231f20]">
+            <h2 className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-tighter leading-none text-[#231f20] break-words whitespace-normal">
               SOCIAL MEDIA SPECIALIST
             </h2>
           </div>
@@ -990,7 +1013,7 @@ export function WorksSection({ onBackToHome }: WorksSectionProps) {
                 💡 LIVE EPISODE STACKS // 点击并展开下侧播放控制板播放音频
               </p>
             </div>
-            <h2 className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-none text-[#231f20]">
+            <h2 className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-tighter leading-none text-[#231f20] break-words whitespace-normal">
               EPISODES
             </h2>
           </div>
@@ -1204,7 +1227,7 @@ export function WorksSection({ onBackToHome }: WorksSectionProps) {
 
             {/* Centered stay tuned text */}
             <div className="relative z-20 flex flex-col sm:flex-row items-center justify-center px-4">
-              <h2 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl lowercase tracking-tighter leading-none text-white select-none pointer-events-none">
+              <h2 className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-[76px] lowercase tracking-tighter leading-none text-white select-none pointer-events-none break-words whitespace-normal">
                 stay tuned...
               </h2>
             </div>

@@ -76,49 +76,47 @@ export default function App() {
                 </svg>
               </div>
 
-              {/* Centered Giant Title "imagine." */}
-              <div className="flex flex-col items-center justify-center my-auto relative z-10 text-center">
+              {/* Centered Giant Title and Navigation Core Container */}
+              <div className="flex flex-col md:flex-row items-center justify-center my-auto relative z-10 text-center gap-8 md:gap-0 w-full max-w-lg md:max-w-none pr-0">
                 <motion.h1 
                   initial={{ scale: 0.95, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.15, type: 'spring', stiffness: 80 }}
-                  style={{ paddingRight: '0px', marginRight: '75px', fontSize: '140px' }}
-                  className="font-heading font-black text-[#231f20] tracking-tighter text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem] leading-none select-none lowercase"
+                  className="font-heading font-black text-[#231f20] tracking-tighter text-5xl sm:text-7xl md:text-8xl lg:text-[144px] xl:text-[11rem] leading-none select-none lowercase mr-0 md:mr-[75px]"
                 >
                   profile<span style={{ color: dotColors[dotColorIndex], marginLeft: '0px' }} className="transition-colors duration-1000">.</span>
                 </motion.h1>
-              </div>
 
-              {/* Right-aligned, vertical navigation column (WORKS, ABOUT ME, CONTACT in uppercase) */}
-              <motion.div 
-                initial={{ x: 30, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                style={{ marginLeft: '0px', paddingLeft: '3px', marginRight: '-6px' }}
-                className="absolute right-6 sm:right-12 md:right-16 top-1/2 -translate-y-1/2 flex flex-col items-end gap-3 md:gap-5 z-20"
-              >
-                <button
-                  id="nav-works-btn"
-                  onClick={() => setCurrentScreen('portfolio')}
-                  className="relative pb-1 bg-transparent border-0 text-[#231f20] font-display text-base sm:text-lg md:text-xl font-black hover:text-[#0047ff] transition-colors cursor-pointer whitespace-nowrap uppercase tracking-wider after:absolute after:bottom-0 after:right-0 after:h-[3px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300 after:ease-out"
+                {/* Right-aligned, vertical navigation column (WORKS, ABOUT ME, CONTACT in uppercase) */}
+                <motion.div 
+                  initial={{ x: 30, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="relative md:absolute md:right-6 sm:md:right-12 md:right-16 md:top-1/2 md:-translate-y-1/2 flex flex-row md:flex-col items-center md:items-end gap-5 md:gap-5 z-20 flex-wrap justify-center"
                 >
-                  WORKS
-                </button>
-                <button
-                  id="nav-about-btn"
-                  onClick={() => setCurrentScreen('about')}
-                  className="relative pb-1 bg-transparent border-0 text-[#231f20] font-display text-base sm:text-lg md:text-xl font-black hover:text-[#ec4899] transition-colors cursor-pointer whitespace-nowrap uppercase tracking-wider after:absolute after:bottom-0 after:right-0 after:h-[3px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300 after:ease-out"
-                >
-                  ABOUT ME
-                </button>
-                <button
-                  id="nav-contact-btn"
-                  onClick={() => setIsContactOpen(true)}
-                  className="relative pb-1 bg-transparent border-0 text-[#231f20] font-display text-base sm:text-lg md:text-xl font-black hover:text-[#10b981] transition-colors cursor-pointer whitespace-nowrap uppercase tracking-wider after:absolute after:bottom-0 after:right-0 after:h-[3px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300 after:ease-out"
-                >
-                  CONTACT
-                </button>
-              </motion.div>
+                  <button
+                    id="nav-works-btn"
+                    onClick={() => setCurrentScreen('portfolio')}
+                    className="relative pb-1 bg-transparent border-0 text-[#231f20] font-display text-base sm:text-lg md:text-xl font-black hover:text-[#0047ff] transition-colors cursor-pointer whitespace-nowrap uppercase tracking-wider after:absolute after:bottom-0 after:right-0 after:h-[3px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300 after:ease-out animate-none bg-none p-0"
+                  >
+                    WORKS
+                  </button>
+                  <button
+                    id="nav-about-btn"
+                    onClick={() => setCurrentScreen('about')}
+                    className="relative pb-1 bg-transparent border-0 text-[#231f20] font-display text-base sm:text-lg md:text-xl font-black hover:text-[#ec4899] transition-colors cursor-pointer whitespace-nowrap uppercase tracking-wider after:absolute after:bottom-0 after:right-0 after:h-[3px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300 after:ease-out animate-none bg-none p-0"
+                  >
+                    ABOUT ME
+                  </button>
+                  <button
+                    id="nav-contact-btn"
+                    onClick={() => setIsContactOpen(true)}
+                    className="relative pb-1 bg-transparent border-0 text-[#231f20] font-display text-base sm:text-lg md:text-xl font-black hover:text-[#10b981] transition-colors cursor-pointer whitespace-nowrap uppercase tracking-wider after:absolute after:bottom-0 after:right-0 after:h-[3px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300 after:ease-out animate-none bg-none p-0"
+                  >
+                    CONTACT
+                  </button>
+                </motion.div>
+              </div>
 
             </motion.div>
           )}

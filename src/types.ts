@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import React from 'react';
+
 export interface PhotographyWork {
   id: string;
   vol: string;
@@ -13,6 +15,7 @@ export interface PhotographyWork {
   imageUrl: string;
   description?: string;
   dispatches?: string;
+  imgStyle?: React.CSSProperties;
 }
 
 export interface PostLayers {

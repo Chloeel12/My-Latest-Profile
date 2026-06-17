@@ -159,7 +159,7 @@ export function AboutSection({ onBack, onGoToWorks }: AboutSectionProps) {
             </div>
 
             {/* Core Passion Points Grid */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="border-2 border-black bg-[#fdf0f4] p-3 shadow-brutal-xs">
                 <div className="w-7 h-7 border-2 border-black bg-white rounded-none flex items-center justify-center text-[#ec4899] mb-2 shadow-brutal-xs">
                   <Camera size={14} className="stroke-[2.5]" />

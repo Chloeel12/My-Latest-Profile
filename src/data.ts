@@ -34,7 +34,8 @@ export const PHOTOGRAPHY_WORKS: PhotographyWork[] = [
     cycles: '',
     isPortrait: false, 
     imageUrl: '/images/Camera_XHS_17809789421871040g2sg31ivtfiqo1ag05pa9in9grn0c66gv07o.jpg',
-    description: '深蓝色调构筑的冰凉世界里。幽蓝圣洁的水波像一道指引，照亮了泳道尽头那个不断追逐、勇往直前的运动身影。'
+    description: '深蓝色调构筑的冰凉世界里。幽蓝圣洁的水波像一道指引，照亮了泳道尽头那个不断追逐、勇往直前的运动身影全神贯注。',
+    imgStyle: { marginTop: '-34px' }
   },
   {
     id: 'P05',

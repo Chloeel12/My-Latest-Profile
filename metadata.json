@@ -1,0 +1,6 @@
+{
+  "name": "Creative Portfolio",
+  "description": "A high-impact Neo-Brutalist and vibrant pop-flat styled creative portfolio showcasing photography, post design, statistical social media dashboards, and podcast episodes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

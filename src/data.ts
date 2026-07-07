@@ -380,6 +380,16 @@ export const PODCAST_WORKS: PodcastWork[] = [
     show: 'chat'
   },
   {
+    id: 'PC05',
+    episode: 'EP005',
+    title: '同人女的流浪和重启',
+    duration: '57 Mins Talk',
+    summary: '',
+    audioLink: 'https://www.xiaoyuzhoufm.com/episode/6a49f08e2e335a35a80e3c08?s=eyJ1IjoiNjAwNmFmMDFlMGY1ZTcyM2JiNGQwMTE2In0%3D',
+    imageUrl: 'https://github.com/Chloeel12/My-Latest-Profile/blob/main/public/images/%E5%90%8C%E4%BA%BA%E5%A5%B3%E6%92%AD%E5%AE%A2%E5%B0%81%E9%9D%A2.jpg',
+    show: 'chat'
+  }, 
+  {
     id: 'PC04',
     episode: 'COMING',
     title: '即将上线，敬请期待……',
